@@ -1,0 +1,54 @@
+overlay: 1.0.0
+info:
+  title: "Replace OpenAPI 3.1 features to make schemes digestable by oapi-codegen"
+  version: 1.0.0
+actions:
+  # current
+  - target: "$..current.properties.time.type"
+    remove: true    
+  - target: "$..current.properties.time"
+    update:
+      oneOf:
+        - type: string
+        - type: integer
+
+  # hourly.properties
+  - target: "$..hourly.properties.time.items.type"
+    remove: true
+  - target: "$..hourly.properties.time.items"
+    update:
+      oneOf:
+        - type: string
+        - type: integer
+
+  # daily.properties
+  - target: "$..daily.properties.time.items.type"
+    remove: true
+  - target: "$..daily.properties.time.items"
+    update:
+      oneOf:
+        - type: string
+        - type: integer
+  - target: "$..daily.properties.sunrise.items.type"
+    remove: true
+  - target: "$..daily.properties.sunrise.items"
+    update:
+      oneOf:
+        - type: string
+        - type: integer
+  - target: "$..daily.properties.sunset.items.type"
+    remove: true
+  - target: "$..daily.properties.sunset.items"
+    update:
+      oneOf:
+        - type: string
+        - type: integer
+
+  # minutely_15.time
+  - target: "$..minutely_15.properties.time.items.type"
+    remove: true
+  - target: "$..minutely_15.properties.time.items"
+    update:
+      oneOf:
+        - type: string
+        - type: integer
