@@ -1,0 +1,198 @@
+{
+  "0": {
+    "icon": "☀️",
+    "description": {
+      "de": "Klarer Himmel",
+      "en": "Clear sky"
+    }
+  },
+  "1": {
+    "icon": "🌤️",
+    "description": {
+      "de": "Hauptsächlich klar",
+      "en": "Mainly clear"
+    }
+  },
+  "2": {
+    "icon": "⛅",
+    "description": {
+      "de": "Teilweise bewölkt",
+      "en": "Partly cloudy"
+    }
+  },
+  "3": {
+    "icon": "☁️",
+    "description": {
+      "de": "Bedeckt",
+      "en": "Overcast"
+    }
+  },
+  "45": {
+    "icon": "🌫️",
+    "description": {
+      "de": "Nebel",
+      "en": "Fog"
+    }
+  },
+  "48": {
+    "icon": "🌫️",
+    "description": {
+      "de": "Reifnebel",
+      "en": "Depositing rime fog"
+    }
+  },
+  "51": {
+    "icon": "🌦️",
+    "description": {
+      "de": "Leichter Sprühregen",
+      "en": "Light drizzle"
+    }
+  },
+  "53": {
+    "icon": "🌧️",
+    "description": {
+      "de": "Mäßiger Sprühregen",
+      "en": "Moderate drizzle"
+    }
+  },
+  "55": {
+    "icon": "🌧️",
+    "description": {
+      "de": "Dichter Sprühregen",
+      "en": "Dense drizzle"
+    }
+  },
+  "56": {
+    "icon": "🥶🌧️",
+    "description": {
+      "de": "Leichter gefrierender Sprühregen",
+      "en": "Light freezing drizzle"
+    }
+  },
+  "57": {
+    "icon": "🥶🌧️",
+    "description": {
+      "de": "Dichter gefrierender Sprühregen",
+      "en": "Dense freezing drizzle"
+    }
+  },
+  "61": {
+    "icon": "🌦️",
+    "description": {
+      "de": "Leichter Regen",
+      "en": "Slight rain"
+    }
+  },
+  "63": {
+    "icon": "🌧️",
+    "description": {
+      "de": "Mäßiger Regen",
+      "en": "Moderate rain"
+    }
+  },
+  "65": {
+    "icon": "🌧️",
+    "description": {
+      "de": "Starker Regen",
+      "en": "Heavy rain"
+    }
+  },
+  "66": {
+    "icon": "🥶🌧️",
+    "description": {
+      "de": "Leichter gefrierender Regen",
+      "en": "Light freezing rain"
+    }
+  },
+  "67": {
+    "icon": "🥶🌧️",
+    "description": {
+      "de": "Starker gefrierender Regen",
+      "en": "Heavy freezing rain"
+    }
+  },
+  "71": {
+    "icon": "🌨️",
+    "description": {
+      "de": "Leichter Schneefall",
+      "en": "Slight snowfall"
+    }
+  },
+  "73": {
+    "icon": "🌨️",
+    "description": {
+      "de": "Mäßiger Schneefall",
+      "en": "Moderate snowfall"
+    }
+  },
+  "75": {
+    "icon": "❄️",
+    "description": {
+      "de": "Starker Schneefall",
+      "en": "Heavy snowfall"
+    }
+  },
+  "77": {
+    "icon": "❄️",
+    "description": {
+      "de": "Schneegriesel",
+      "en": "Snow grains"
+    }
+  },
+  "80": {
+    "icon": "🌦️",
+    "description": {
+      "de": "Leichter Regenschauer",
+      "en": "Slight rain showers"
+    }
+  },
+  "81": {
+    "icon": "🌧️",
+    "description": {
+      "de": "Mäßiger Regenschauer",
+      "en": "Moderate rain showers"
+    }
+  },
+  "82": {
+    "icon": "⛈️",
+    "description": {
+      "de": "Starker Regenschauer",
+      "en": "Violent rain showers"
+    }
+  },
+  "85": {
+    "icon": "🌨️",
+    "description": {
+      "de": "Leichter Schneeschauer",
+      "en": "Slight snow showers"
+    }
+  },
+  "86": {
+    "icon": "❄️",
+    "description": {
+      "de": "Starker Schneeschauer",
+      "en": "Heavy snow showers"
+    }
+  },
+  "95": {
+    "icon": "🌩️",
+    "description": {
+      "de": "Gewitter",
+      "en": "Thunderstorm"
+    }
+  },
+  "96": {
+    "icon": "⛈️",
+    "description": {
+      "de": "Gewitter mit leichtem Hagel",
+      "en": "Thunderstorm with slight hail"
+    }
+  },
+  "99": {
+    "icon": "⛈️",
+    "description": {
+      "de": "Gewitter mit starkem Hagel",
+      "en": "Thunderstorm with heavy hail"
+    }
+  }
+}
