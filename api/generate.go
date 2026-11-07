@@ -100,7 +100,6 @@ func (g *wrapperGenerator) writePreamble(typeName string) {
 	g.out.WriteString("package openmeteo\n")
 	g.out.WriteString("import (\n")
 	g.out.WriteString("\"context\"\n")
-	//	g.out.WriteString("\"io\"\n")
 	g.out.WriteString("\n")
 	g.out.WriteString("\"github.com/tdrn-org/go-open-meteo/api\"\n")
 	g.out.WriteString(")\n")
@@ -218,26 +217,8 @@ func (g *mockGenerator) writeResults(signature *types.Signature) {
 	g.out.WriteString(")")
 }
 
-func (g *mockGenerator) writeBody(method *types.Func, signature *types.Signature) {
+func (g *mockGenerator) writeBody(_ *types.Func, _ *types.Signature) {
 	g.out.WriteString("return nil,nil\n")
-	// params := signature.Params()
-	// g.out.WriteString("response, err := client.apiClient." + method.Name() + "(")
-	// for i := 0; i < params.Len()-1; i++ {
-	// 	if i > 0 {
-	// 		g.out.WriteString(", ")
-	// 	}
-	// 	param := params.At(i)
-	// 	g.out.WriteString(param.Name())
-	// }
-	// g.out.WriteString(")\n")
-	// g.out.WriteString("if err != nil {\n")
-	// g.out.WriteString("return nil,client.wrapSystemError(err)\n")
-	// g.out.WriteString("}\n")
-	// g.out.WriteString("err = client.checkAPIResponse(response.HTTPResponse)\n")
-	// g.out.WriteString("if err != nil {\n")
-	// g.out.WriteString("return nil,err\n")
-	// g.out.WriteString("}\n")
-	// g.out.WriteString("return response,err\n")
 }
 
 type apiTestGenerator struct {
@@ -296,13 +277,11 @@ const applicationJsonContent string = "{}"
 const multipartFormDataContent string = "--bndry\\r\\nContent-Disposition: form-data; name=\\\"document\\\"\\r\\n\\r\\ndocument\\r\\n--bndry--\\r\\n"
 
 var methodContentTypeOverrideMap map[string]string = map[string]string{
-	"DocumentsPostDocumentCreateWithBodyWithResponse": multipartFormDataContentType,
-	"DocumentsUpdateVersionWithBodyWithResponse":      multipartFormDataContentType,
+	"not-yet-used": multipartFormDataContentType,
 }
 
 var methodContentOverrideMap map[string]string = map[string]string{
-	"DocumentsPostDocumentCreateWithBodyWithResponse": multipartFormDataContent,
-	"DocumentsUpdateVersionWithBodyWithResponse":      multipartFormDataContent,
+	"not-yet-used": multipartFormDataContent,
 }
 
 func (g *apiTestGenerator) writeVarInitialization(methodName, varName string, varType types.Type) {
