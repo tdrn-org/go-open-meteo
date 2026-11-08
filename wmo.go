@@ -9,30 +9,29 @@ package openmeteo
 import (
 	_ "embed"
 	"encoding/json"
-
-	"golang.org/x/text/language"
 )
-
-//go:embed wmo_codes.json
-var wmoCodesData []byte
-
-type wmoCodesJSON map[int]struct {
-	Icon        string            `json:"icon"`
-	Description map[string]string `json:"description"`
-}
-
-var wmoCodes wmoCodesJSON
 
 type WMOCode int
 
 func (code WMOCode) Icon() string {
-	return wmoCodes[int(code)].Icon
+	return wmoCodes[code].Icon
 }
 
-func (code WMOCode) Description(locale language.Tag) string {
-	matchingLocale := MatchLocale(locale)
-	return wmoCodes[int(code)].Description[matchingLocale.String()]
+func (code WMOCode) Code() string {
+	return wmoCodes[code].Code
 }
+
+//go:embed wmo_codes.json
+var wmoCodesData []byte
+
+type wmoCodesJSON map[WMOCode]wmoCodeInfo
+
+type wmoCodeInfo struct {
+	Icon string `json:"icon"`
+	Code string `json:"code"`
+}
+
+var wmoCodes wmoCodesJSON
 
 func init() {
 	err := json.Unmarshal(wmoCodesData, &wmoCodes)

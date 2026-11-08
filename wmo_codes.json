@@ -1,198 +1,114 @@
 {
   "0": {
     "icon": "☀️",
-    "description": {
-      "de": "Klarer Himmel",
-      "en": "Clear sky"
-    }
+    "code": "CLEAR_SKY"
   },
   "1": {
     "icon": "🌤️",
-    "description": {
-      "de": "Hauptsächlich klar",
-      "en": "Mainly clear"
-    }
+    "code": "MAINLY_CLEAR"
   },
   "2": {
     "icon": "⛅",
-    "description": {
-      "de": "Teilweise bewölkt",
-      "en": "Partly cloudy"
-    }
+    "code": "PARTLY_CLOUDY"
   },
   "3": {
     "icon": "☁️",
-    "description": {
-      "de": "Bedeckt",
-      "en": "Overcast"
-    }
+    "code": "OVERCAST"
   },
   "45": {
     "icon": "🌫️",
-    "description": {
-      "de": "Nebel",
-      "en": "Fog"
-    }
+    "code": "FOG"
   },
   "48": {
     "icon": "🌫️",
-    "description": {
-      "de": "Reifnebel",
-      "en": "Depositing rime fog"
-    }
+    "code": "DEPOSITING_RIME_FOG"
   },
   "51": {
     "icon": "🌦️",
-    "description": {
-      "de": "Leichter Sprühregen",
-      "en": "Light drizzle"
-    }
+    "code": "LIGHT_DRIZZLE"
   },
   "53": {
     "icon": "🌧️",
-    "description": {
-      "de": "Mäßiger Sprühregen",
-      "en": "Moderate drizzle"
-    }
+    "code": "MODERATE_DRIZZLE"
   },
   "55": {
     "icon": "🌧️",
-    "description": {
-      "de": "Dichter Sprühregen",
-      "en": "Dense drizzle"
-    }
+    "code": "DENSE_DRIZZLE"
   },
   "56": {
     "icon": "🥶🌧️",
-    "description": {
-      "de": "Leichter gefrierender Sprühregen",
-      "en": "Light freezing drizzle"
-    }
+    "code": "LIGHT_FREEZING_DRIZZLE"
   },
   "57": {
     "icon": "🥶🌧️",
-    "description": {
-      "de": "Dichter gefrierender Sprühregen",
-      "en": "Dense freezing drizzle"
-    }
+    "code": "DENSE_FREEZING_DRIZZLE"
   },
   "61": {
     "icon": "🌦️",
-    "description": {
-      "de": "Leichter Regen",
-      "en": "Slight rain"
-    }
+    "code": "SLIGHT_RAIN"
   },
   "63": {
     "icon": "🌧️",
-    "description": {
-      "de": "Mäßiger Regen",
-      "en": "Moderate rain"
-    }
+    "code": "MODERATE_RAIN"
   },
   "65": {
     "icon": "🌧️",
-    "description": {
-      "de": "Starker Regen",
-      "en": "Heavy rain"
-    }
+    "code": "HEAVY_RAIN"
   },
   "66": {
     "icon": "🥶🌧️",
-    "description": {
-      "de": "Leichter gefrierender Regen",
-      "en": "Light freezing rain"
-    }
+    "code": "LIGHT_FREEZING_RAIN"
   },
   "67": {
     "icon": "🥶🌧️",
-    "description": {
-      "de": "Starker gefrierender Regen",
-      "en": "Heavy freezing rain"
-    }
+    "code": "HEAVY_FREEZING_RAIN"
   },
   "71": {
     "icon": "🌨️",
-    "description": {
-      "de": "Leichter Schneefall",
-      "en": "Slight snowfall"
-    }
+    "code": "SLIGHT_SNOWFALL"
   },
   "73": {
     "icon": "🌨️",
-    "description": {
-      "de": "Mäßiger Schneefall",
-      "en": "Moderate snowfall"
-    }
+    "code": "MODERATE_SNOWFALL"
   },
   "75": {
     "icon": "❄️",
-    "description": {
-      "de": "Starker Schneefall",
-      "en": "Heavy snowfall"
-    }
+    "code": "HEAVY_SNOWFALL"
   },
   "77": {
     "icon": "❄️",
-    "description": {
-      "de": "Schneegriesel",
-      "en": "Snow grains"
-    }
+    "code": "SNOW_GRAINS"
   },
   "80": {
     "icon": "🌦️",
-    "description": {
-      "de": "Leichter Regenschauer",
-      "en": "Slight rain showers"
-    }
+    "code": "SLIGHT_RAIN_SHOWERS"
   },
   "81": {
     "icon": "🌧️",
-    "description": {
-      "de": "Mäßiger Regenschauer",
-      "en": "Moderate rain showers"
-    }
+    "code": "MODERATE_RAIN_SHOWERS"
   },
   "82": {
     "icon": "⛈️",
-    "description": {
-      "de": "Starker Regenschauer",
-      "en": "Violent rain showers"
-    }
+    "code": "VIOLENT_RAIN_SHOWERS"
   },
   "85": {
     "icon": "🌨️",
-    "description": {
-      "de": "Leichter Schneeschauer",
-      "en": "Slight snow showers"
-    }
+    "code": "SLIGHT_SNOW_SHOWERS"
   },
   "86": {
     "icon": "❄️",
-    "description": {
-      "de": "Starker Schneeschauer",
-      "en": "Heavy snow showers"
-    }
+    "code": "HEAVY_SNOW_SHOWERS"
   },
   "95": {
     "icon": "🌩️",
-    "description": {
-      "de": "Gewitter",
-      "en": "Thunderstorm"
-    }
+    "code": "THUNDERSTORM"
   },
   "96": {
     "icon": "⛈️",
-    "description": {
-      "de": "Gewitter mit leichtem Hagel",
-      "en": "Thunderstorm with slight hail"
-    }
+    "code": "THUNDERSTORM_WITH_SLIGHT_HAIL"
   },
   "99": {
     "icon": "⛈️",
-    "description": {
-      "de": "Gewitter mit starkem Hagel",
-      "en": "Thunderstorm with heavy hail"
-    }
+    "code": "THUNDERSTORM_WITH_HEAVY_HAIL"
   }
 }

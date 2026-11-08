@@ -11,17 +11,12 @@ import (
 
 	"github.com/stretchr/testify/require"
 	openmeteo "github.com/tdrn-org/go-open-meteo"
-	"golang.org/x/text/language"
 )
 
 func TestWMOcodes(t *testing.T) {
 	code := openmeteo.WMOCode(77)
 	codeIcon := code.Icon()
 	require.Equal(t, "❄️", codeIcon)
-	codeDescriptionEN := code.Description(language.English)
-	require.Equal(t, "Snow grains", codeDescriptionEN)
-	codeDescriptionDE := code.Description(language.German)
-	require.Equal(t, "Schneegriesel", codeDescriptionDE)
-	codeDescriptionGR := code.Description(language.Greek)
-	require.Equal(t, "Snow grains", codeDescriptionGR)
+	codeName := code.Code()
+	require.Equal(t, "SNOW_GRAINS", codeName)
 }
