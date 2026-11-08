@@ -41,6 +41,9 @@ func getTime(f0 func() (string, error), f1 func() (int, error), location *time.L
 	if err0 == nil {
 		t, err := time.Parse("2006-01-02T15:04", t0)
 		if err != nil {
+			t, err = time.Parse("2006-01-02", t0)
+		}
+		if err != nil {
 			return time.Time{}, err
 		}
 		return time.Date(t.Year(), t.Month(), t.Day(), t.Hour(), t.Minute(), t.Second(), t.Nanosecond(), location), nil
