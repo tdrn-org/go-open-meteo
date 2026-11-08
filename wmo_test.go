@@ -14,9 +14,47 @@ import (
 )
 
 func TestWMOcodes(t *testing.T) {
-	code := openmeteo.WMOCode(77)
-	codeIcon := code.Icon()
-	require.Equal(t, "❄️", codeIcon)
-	codeName := code.Code()
-	require.Equal(t, "SNOW_GRAINS", codeName)
+	tests := []struct {
+		name         string
+		code         openmeteo.WMOCode
+		expectedIcon string
+		expectedCode string
+	}{
+		{
+			name:         "snow grains",
+			code:         openmeteo.WMOCode(77),
+			expectedIcon: "❄️",
+			expectedCode: "SNOW_GRAINS",
+		},
+		{
+			name:         "clear sky",
+			code:         openmeteo.WMOCode(0),
+			expectedIcon: "☀️",
+			expectedCode: "CLEAR_SKY",
+		},
+		{
+			name:         "unmapped code",
+			code:         openmeteo.WMOCode(42),
+			expectedIcon: openmeteo.UnknownWMOIcon,
+			expectedCode: openmeteo.UnknownWMOCode,
+		},
+		{
+			name:         "code outside of range",
+			code:         openmeteo.WMOCode(999),
+			expectedIcon: openmeteo.UnknownWMOIcon,
+			expectedCode: openmeteo.UnknownWMOCode,
+		},
+		{
+			name:         "negative code",
+			code:         openmeteo.WMOCode(-1),
+			expectedIcon: openmeteo.UnknownWMOIcon,
+			expectedCode: openmeteo.UnknownWMOCode,
+		},
+	}
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			require.Equal(t, test.expectedIcon, test.code.Icon())
+			require.Equal(t, test.expectedCode, test.code.Code())
+		})
+	}
 }
