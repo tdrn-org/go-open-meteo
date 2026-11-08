@@ -13,12 +13,26 @@ import (
 
 type WMOCode int
 
+// UnknownWMOIcon is returned by [WMOCode.Icon] for codes without a mapping.
+const UnknownWMOIcon = "❔"
+
+// UnknownWMOCode is returned by [WMOCode.Code] for codes without a mapping.
+const UnknownWMOCode = "UNKNOWN"
+
 func (code WMOCode) Icon() string {
-	return wmoCodes[code].Icon
+	info, ok := wmoCodes[code]
+	if !ok {
+		return UnknownWMOIcon
+	}
+	return info.Icon
 }
 
 func (code WMOCode) Code() string {
-	return wmoCodes[code].Code
+	info, ok := wmoCodes[code]
+	if !ok {
+		return UnknownWMOCode
+	}
+	return info.Code
 }
 
 //go:embed wmo_codes.json
