@@ -24,7 +24,7 @@ import (
 )
 
 func TestStartStop(t *testing.T) {
-	serverMock := mock.Start()
+	serverMock := mock.StartMockServer(nil)
 	defer serverMock.Stop(t.Context())
 
 	apiURL := serverMock.APIURL()

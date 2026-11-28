@@ -1,10 +1,4 @@
-//
-// Copyright (C) 2026 Holger de Carne
-//
-// This software may be modified and distributed under the terms
-// of the MIT license. See the LICENSE file for details.
-
-// Package openmeteo provides the necessary functions to access the Open-Meteo Weather API.
+// Generated from api.ClientWithResponsesInterface
 package openmeteo
 
 import (
@@ -28,10 +22,11 @@ var ErrAPIFailure = errors.New("API failure")
 
 // Client instances are used to access the REST API.
 type Client struct {
-	apiURL     *url.URL
-	httpClient *http.Client
-	apiClient  api.ClientWithResponsesInterface
-	logger     *slog.Logger
+	apiURL         *url.URL
+	apiClient      api.ClientWithResponsesInterface
+	httpClient     *http.Client
+	logger         *slog.Logger
+	requestEditors []api.RequestEditorFn
 }
 
 // ClientOption interface is used to set Client options during Client creation.
@@ -64,9 +59,15 @@ func WithLogger(logger *slog.Logger) ClientOptionFunc {
 	}
 }
 
-// NewClient creates a new Client instance using the given
-// connect URL as well as Client options.
-func NewClient(apiURL *url.URL, options ...ClientOption) (*Client, error) {
+// WithRequestEditors sets the [api.RequestEditorFn]s to applied to to each
+// request issued via this Client instance.
+func WithRequestEditors(requestEditors ...api.RequestEditorFn) ClientOptionFunc {
+	return func(client *Client) {
+		client.requestEditors = append(client.requestEditors, requestEditors...)
+	}
+}
+
+func newClient(apiURL *url.URL, options ...ClientOption) (*Client, error) {
 	client := &Client{
 		apiURL: apiURL,
 	}
@@ -79,11 +80,7 @@ func NewClient(apiURL *url.URL, options ...ClientOption) (*Client, error) {
 	if client.logger == nil {
 		client.logger = slog.With(slog.String("client", apiURL.String()))
 	}
-	httpClientOption := func(apiClient *api.Client) error {
-		apiClient.Client = client.httpClient
-		return nil
-	}
-	apiClient, err := api.NewClientWithResponses(apiURL.String(), api.WithRequestEditorFn(client.prepareRequest()), httpClientOption)
+	apiClient, err := api.NewClientWithResponses(apiURL.String(), api.WithHTTPClient(client.httpClient), api.WithRequestEditorFn(client.prepareRequest()))
 	if err != nil {
 		return nil, fmt.Errorf("failed to create client (cause: %w)", err)
 	}
@@ -91,9 +88,27 @@ func NewClient(apiURL *url.URL, options ...ClientOption) (*Client, error) {
 	return client, nil
 }
 
+// See [api.GetV1ForecastWithResponse]
+func (client *Client) GetV1Forecast(ctx context.Context, params *api.GetV1ForecastParams, reqEditors ...api.RequestEditorFn) (*api.GetV1ForecastResponse, error) {
+	response, err := client.apiClient.GetV1ForecastWithResponse(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, client.wrapSystemError(err)
+	}
+	err = client.checkAPIResponse(response.HTTPResponse)
+	if err != nil {
+		return nil, err
+	}
+	return response, err
+}
+
 func (client *Client) prepareRequest() api.RequestEditorFn {
 	return func(ctx context.Context, req *http.Request) error {
-		req.Header.Set("Accept", "application/json")
+		for _, requestEditor := range client.requestEditors {
+			err := requestEditor(ctx, req)
+			if err != nil {
+				return err
+			}
+		}
 		return nil
 	}
 }

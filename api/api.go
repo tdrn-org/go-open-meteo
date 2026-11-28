@@ -4,19 +4,16 @@
 // This software may be modified and distributed under the terms
 // of the MIT license. See the LICENSE file for details.
 
-// Package api contains the generated objects and functions of the Open-Meteo Weather API.
+// Package api contains the generated OpenAPI spec objects and functions.
 package api
 
-//go:generate go run github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen --config=oapi-codegen-open-meteo.yaml forecast.yml
-//go:generate go run ../cmd/build/build.go genwrapper ../openmeteo.gen.go
-//go:generate go run ../cmd/build/build.go genmock ../mock/mock.gen.go
-//go:generate go run ../cmd/build/build.go genapitest ../openmeteo_test.go
+//go:generate go run github.com/tdrn-org/go-oapi-tools/cmd/generate generate.conf
 
 import (
 	_ "embed"
 )
 
-// The Open-Meteo Weather API spec yaml file used to generate the API code.
+// The OpenAPI spec yaml file used to generate the API code.
 //
 //go:embed forecast.yml
-var OpenMeteoForecastRestApiSpecYaml []byte
+var OpenAPISpecYaml []byte

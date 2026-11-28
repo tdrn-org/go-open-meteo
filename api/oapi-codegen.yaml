@@ -4,7 +4,6 @@ generate:
   client: true
   std-http-server: true
   strict-server: true
-output: api.gen.go
 output-options:
   overlay:
-    path: oapi-codegen-open-meteo-overlay.yaml
+    path: oapi-codegen-overlay.yaml
