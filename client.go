@@ -12,6 +12,15 @@ import (
 	"net/url"
 )
 
+// PublicEndpointURL is the Endpoint URL for the public Open-Meteo service.
+var PublicEndpointURL *url.URL = func() *url.URL {
+	url, err := url.Parse("https://api.open-meteo.com")
+	if err != nil {
+		panic(err)
+	}
+	return url
+}()
+
 // NewClient creates a new Client instance using the given
 // endpoint URL as well as Client options.
 func NewClient(apiURL *url.URL, options ...ClientOption) (*Client, error) {

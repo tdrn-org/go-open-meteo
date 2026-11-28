@@ -4,6 +4,7 @@
 // This software may be modified and distributed under the terms
 // of the MIT license. See the LICENSE file for details.
 
+// Package mock provides a plugable mock implementation for the Open-Meteo Weather API service.
 package mock
 
 // StartMockServer starts and returns a new mock instance.
